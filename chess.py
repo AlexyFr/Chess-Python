@@ -112,11 +112,12 @@ while(True):
     # New turn... No piece selected
     is_selected = False
 
+    # Reverse to make calculations on coordinates
     cb.reverse()
     cb_empty.reverse()
 
     while is_selected == False:
-        # Waiting piece selecetion and coordinates input
+        # Waiting piece selection and coordinates input
         start_input = input("Select a piece of the board to move it (syntax : (piece)(Y)(X) (ex: PB3)) : ")
         
         while ( len(start_input) != 3 ) or ( start_input[0] not in pchar ) or ( start_input[1] not in ychar ) or ( start_input[2] not in xchar ):
@@ -176,6 +177,7 @@ while(True):
     elif selected_piece == "K" or selected_piece == "k":
         king(cb_empty,cb,y_start_cb,x_start_cb,y_dest_cb,x_dest_cb)
 
+    # New reverse to make the chessboard printable
     cb.reverse()
     cb_empty.reverse()
     
